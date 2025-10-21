@@ -21,6 +21,16 @@ const projects = [
       "A modern WebGPU-based alternative to Curtains.js for creating interactive planes and stunning visual effects.",
     href: "https://github.com/vdmo/podiumjs-rocks",
   },
+  {
+    title: "Podium.Rocks",
+    description: "WebGPU Presentation and Visuals for The Web Toolkit.",
+    href: "#",
+  },
+  {
+    title: "Geyser",
+    description: "Vulkan, Metal and WebGPU texture sharing build in Rust.",
+    href: "#",
+  },
 ];
 
 const Index = () => {
