@@ -1,6 +1,7 @@
 import { ProjectCard } from "@/components/ProjectCard";
 import { VJUnitonSection } from "@/components/VJUnitonSection";
 import { MadeWithDyad } from "@/components/made-with-dyad";
+import { FloatingGradient } from "@/components/FloatingGradient";
 
 const projects = [
   {
@@ -60,7 +61,8 @@ const projects = [
 
 const Index = () => {
   return (
-    <div className="min-h-screen w-full bg-black text-white antialiased">
+    <div className="min-h-screen w-full bg-black text-white antialiased relative">
+      <FloatingGradient />
       <div className="absolute top-0 left-0 -z-10 h-full w-full bg-black bg-[radial-gradient(#1a1a1a_1px,transparent_1px)] [background-size:16px_16px]"></div>
       
       <header className="container mx-auto px-4 flex flex-col items-center justify-center pt-24 pb-16">
