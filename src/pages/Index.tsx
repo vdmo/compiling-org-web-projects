@@ -16,7 +16,7 @@ const projects = [
     href: "#",
   },
   {
-    title: "Podium.Rocks",
+    title: "PodiumJS Rocks",
     description:
       "A modern WebGPU-based alternative to Curtains.js for creating interactive planes and stunning visual effects.",
     href: "https://github.com/vdmo/podiumjs-rocks",
