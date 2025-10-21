@@ -46,6 +46,16 @@ const projects = [
     description: "Preview ISF files directly in VS Code.",
     href: "#",
   },
+  {
+    title: "WGSLX",
+    description: "ISF alternative for WGSL.",
+    href: "#",
+  },
+  {
+    title: "Play",
+    description: "Browser based VJ mixer to mix between Videos, GIFs, MILK Drop, ISF, Threejs.",
+    href: "#",
+  },
 ];
 
 const Index = () => {
