@@ -1,105 +1,89 @@
 import { ProjectCard } from "@/components/ProjectCard";
-import { VJUnitonSection } from "@/components/VJUnitonSection";
-import { MadeWithDyad } from "@/components/made-with-dyad";
-
-const projects = [
-  {
-    title: "NUWE Rust",
-    description:
-      "A visual modal system built with Bevy and Rust for creating complex and performant visual applications.",
-    href: "#",
-  },
-  {
-    title: "PCHI life",
-    description:
-      "A universal language protocol for creating and sharing interactive 3D scenes across platforms.",
-    href: "#",
-  },
-  {
-    title: "PodiumJS",
-    description:
-      "A modern WebGPU-based alternative to Curtains.js for creating interactive planes and stunning visual effects.",
-    href: "https://github.com/vdmo/podiumjs-rocks",
-  },
-  {
-    title: "Podium.Rocks",
-    description: "WebGPU Presentation and Visuals for The Web Toolkit.",
-    href: "#",
-  },
-  {
-    title: "Geyser",
-    description: "Vulkan, Metal and WebGPU texture sharing build in Rust.",
-    href: "#",
-  },
-  {
-    title: "ShadersHub.com",
-    description: "A marketplace for shaders, education, and tools.",
-    href: "#",
-  },
-  {
-    title: "VJs.agency",
-    description: "A place where artists can get booked.",
-    href: "#",
-  },
-  {
-    title: "VS Code ISF Plugin",
-    description: "Preview ISF files directly in VS Code.",
-    href: "#",
-  },
-  {
-    title: "WGSLX",
-    description: "ISF alternative for WGSL.",
-    href: "#",
-  },
-  {
-    title: "Play",
-    description: "Browser based VJ mixer to mix between Videos, GIFs, MILK Drop, ISF, Threejs.",
-    href: "#",
-  },
-];
+import { MadeWithVDMO } from "@/components/made-with-dyad";
+import { Navigation } from "@/components/Navigation";
+import { ActiveHeroScene } from "@/components/three/HeroConfig";
+import { projects } from "@/data/projects";
 
 const Index = () => {
   return (
     <div className="min-h-screen w-full bg-black text-white antialiased relative">
       <div className="absolute top-0 left-0 -z-10 h-full w-full bg-black bg-[radial-gradient(#1a1a1a_1px,transparent_1px)] [background-size:16px_16px]"></div>
-      
-      <header className="container mx-auto px-4 flex flex-col items-center justify-center pt-24 pb-16">
-        <div className="text-center max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-400 tracking-tighter">
-            compiling.org
-          </h1>
-          <p className="text-lg md:text-xl text-gray-300">
-            Next Generation of Tools for Visuals and Visuals for the Web
-          </p>
+
+      <Navigation />
+
+      {/* Hero Section with Three.js */}
+      <header className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
+        <ActiveHeroScene />
+        <div className="relative z-10 container mx-auto px-4 flex flex-col items-center justify-center">
+          <div className="text-center max-w-5xl mx-auto">
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-b from-white via-gray-200 to-gray-500 tracking-tighter animate-fade-in">
+              compiling.org
+            </h1>
+            <p className="text-xl md:text-2xl lg:text-3xl text-gray-300 mb-8 animate-fade-in-delay">
+              Next Generation of Tools for Visuals and Visuals for the Web
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-delay-2">
+              <a
+                href="#projects"
+                className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 rounded-lg transition-all duration-300 font-semibold text-lg shadow-lg shadow-purple-500/50 hover:shadow-purple-500/80 hover:scale-105"
+              >
+                Explore Projects
+              </a>
+              <a
+                href="https://github.com/compiling"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg transition-all duration-300 font-semibold text-lg backdrop-blur-sm hover:scale-105"
+              >
+                View on GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <svg
+            className="w-6 h-6 text-white/50"
+            fill="none"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+          </svg>
         </div>
       </header>
 
-      <main className="container mx-auto px-4 pb-16">
+      <main id="projects" className="container mx-auto px-4 py-16">
         <div className="text-center max-w-4xl mx-auto mb-12">
           <h2 className="text-4xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-400">
             Projects
           </h2>
           <p className="text-lg text-gray-400">
-            We are the creators, maintainers, and contributors of some of the most critical infrastructure projects in the Rust/Bevy/JavaScript ecosystem.
+            We are the creators, maintainers, and contributors of some of the
+            most critical infrastructure projects in the Rust/Bevy/JavaScript
+            ecosystem.
           </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto w-full">
           {projects.map((project) => (
             <ProjectCard
-              key={project.title}
+              key={project.id}
               title={project.title}
               description={project.description}
               href={project.href}
+              color={project.color}
+              tags={project.tags}
+              status={project.status}
             />
           ))}
         </div>
-        
-        <VJUnitonSection />
       </main>
 
       <footer className="w-full pb-4">
-        <MadeWithDyad />
+        <MadeWithVDMO />
       </footer>
     </div>
   );
