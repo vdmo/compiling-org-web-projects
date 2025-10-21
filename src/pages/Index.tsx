@@ -31,6 +31,21 @@ const projects = [
     description: "Vulkan, Metal and WebGPU texture sharing build in Rust.",
     href: "#",
   },
+  {
+    title: "ShadersHub.com",
+    description: "A marketplace for shaders, education, and tools.",
+    href: "#",
+  },
+  {
+    title: "VJs.agency",
+    description: "A place where artists can get booked.",
+    href: "#",
+  },
+  {
+    title: "VS Code ISF Plugin",
+    description: "Preview ISF files directly in VS Code.",
+    href: "#",
+  },
 ];
 
 const Index = () => {
