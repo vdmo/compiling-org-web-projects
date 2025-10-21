@@ -4,11 +4,13 @@ import React from "react";
 interface ProjectCardProps {
   title: string;
   description: string;
+  href?: string;
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
   title,
   description,
+  href = "#",
 }) => {
   return (
     <div className="border border-white/10 rounded-lg p-6 bg-black/30 backdrop-blur-sm hover:border-white/20 transition-all duration-300 group relative overflow-hidden">
@@ -17,7 +19,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         <h3 className="text-xl font-semibold text-white mb-2">{title}</h3>
         <p className="text-gray-400 mb-4 h-24">{description}</p>
         <a
-          href="#"
+          href={href}
+          target={href.startsWith("http") ? "_blank" : "_self"}
+          rel="noopener noreferrer"
           className="text-sm font-medium text-white/50 group-hover:text-white flex items-center transition-colors"
         >
           Explore
