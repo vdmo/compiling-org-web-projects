@@ -69,7 +69,7 @@ const Index = () => {
             compiling.org
           </h1>
           <p className="text-lg md:text-xl text-gray-300">
-            Next Generation of Tools for Visual and AV performance.
+            Next Generation of Tools for Visuals and Visuals for the Web
           </p>
         </div>
       </header>
