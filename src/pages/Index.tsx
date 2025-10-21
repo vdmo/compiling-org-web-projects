@@ -16,7 +16,7 @@ const projects = [
     href: "#",
   },
   {
-    title: "PodiumJS Rocks",
+    title: "PodiumJS",
     description:
       "A modern WebGPU-based alternative to Curtains.js for creating interactive planes and stunning visual effects.",
     href: "https://github.com/vdmo/podiumjs-rocks",
@@ -50,6 +50,15 @@ const Index = () => {
       </header>
 
       <main className="container mx-auto px-4 pb-16">
+        <div className="text-center max-w-4xl mx-auto mb-12">
+          <h2 className="text-4xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-400">
+            Projects
+          </h2>
+          <p className="text-lg text-gray-400">
+            We are the creators, maintainers, and contributors of some of the most critical infrastructure projects in the Rust/Bevy/JavaScript ecosystem.
+          </p>
+        </div>
+
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto w-full">
           {projects.map((project) => (
             <ProjectCard
