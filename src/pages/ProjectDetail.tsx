@@ -139,62 +139,27 @@ const ProjectDetail: React.FC = () => {
             </p>
           </div>
 
-          {/* Features Section */}
-          <div className="border border-white/10 rounded-xl p-8 bg-black/30 backdrop-blur-sm">
-            <h2 className="text-3xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
-              Key Features
-            </h2>
-            <ul className="space-y-4 text-gray-300">
-              <li className="flex items-start space-x-3">
-                <span className="text-2xl">🚀</span>
-                <div>
-                  <h3 className="font-semibold text-white mb-1">
-                    High Performance
-                  </h3>
-                  <p className="text-gray-400">
-                    Built with modern technologies for optimal performance and
-                    low latency.
-                  </p>
-                </div>
-              </li>
-              <li className="flex items-start space-x-3">
-                <span className="text-2xl">🎨</span>
-                <div>
-                  <h3 className="font-semibold text-white mb-1">
-                    Creative Freedom
-                  </h3>
-                  <p className="text-gray-400">
-                    Powerful tools that don't limit your creativity or artistic
-                    vision.
-                  </p>
-                </div>
-              </li>
-              <li className="flex items-start space-x-3">
-                <span className="text-2xl">🔧</span>
-                <div>
-                  <h3 className="font-semibold text-white mb-1">
-                    Developer Friendly
-                  </h3>
-                  <p className="text-gray-400">
-                    Clean APIs and comprehensive documentation for quick
-                    integration.
-                  </p>
-                </div>
-              </li>
-              <li className="flex items-start space-x-3">
-                <span className="text-2xl">🌐</span>
-                <div>
-                  <h3 className="font-semibold text-white mb-1">
-                    Cross-Platform
-                  </h3>
-                  <p className="text-gray-400">
-                    Works seamlessly across different platforms and
-                    environments.
-                  </p>
-                </div>
-              </li>
-            </ul>
-          </div>
+          {/* Features Section - Only show if custom features are defined */}
+          {project.features && project.features.length > 0 && (
+            <div className="border border-white/10 rounded-xl p-8 bg-black/30 backdrop-blur-sm">
+              <h2 className="text-3xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
+                Key Features
+              </h2>
+              <ul className="space-y-4 text-gray-300">
+                {project.features.map((feature, index) => (
+                  <li key={index} className="flex items-start space-x-3">
+                    <span className="text-2xl">{feature.icon}</span>
+                    <div>
+                      <h3 className="font-semibold text-white mb-1">
+                        {feature.title}
+                      </h3>
+                      <p className="text-gray-400">{feature.description}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
 
         {/* Related Projects */}

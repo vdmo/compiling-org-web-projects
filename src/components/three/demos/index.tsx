@@ -49,6 +49,42 @@ export const VSCodeISFDemo = lazy(() =>
   })),
 );
 
+export const NuweStrippedDemo = lazy(() =>
+  import("./NuweStrippedDemo").then((module) => ({
+    default: module.NuweStrippedDemo,
+  })),
+);
+
+export const ModurustVSTHexoDSPDemo = lazy(() =>
+  import("./ModurustVSTHexoDSPDemo").then((module) => ({
+    default: module.ModurustVSTHexoDSPDemo,
+  })),
+);
+
+export const PDRSSynthDemo = lazy(() =>
+  import("./PDRSSynthDemo").then((module) => ({
+    default: module.PDRSSynthDemo,
+  })),
+);
+
+export const RustFractalShaderEngineDemo = lazy(() =>
+  import("./RustFractalShaderEngineDemo").then((module) => ({
+    default: module.RustFractalShaderEngineDemo,
+  })),
+);
+
+export const StreamDiffusionRSDemo = lazy(() =>
+  import("./StreamDiffusionRSDemo").then((module) => ({
+    default: module.StreamDiffusionRSDemo,
+  })),
+);
+
+export const NFTBlockchainInteractiveDemo = lazy(() =>
+  import("./NFTBlockchainInteractiveDemo").then((module) => ({
+    default: module.NFTBlockchainInteractiveDemo,
+  })),
+);
+
 // Demo component mapper for easy lookup by project ID
 export const getDemoComponent = (projectId: string) => {
   const demoMap: Record<string, React.LazyExoticComponent<React.FC>> = {
@@ -62,6 +98,12 @@ export const getDemoComponent = (projectId: string) => {
     "vscode-isf": VSCodeISFDemo,
     wgslx: WGSLXDemo,
     play: PlayDemo,
+    "nuwe-stripped": NuweStrippedDemo,
+    "modurust-vst-hexodsp": ModurustVSTHexoDSPDemo,
+    "pd-rs-synth": PDRSSynthDemo,
+    "rust-fractal-shader-engine": RustFractalShaderEngineDemo,
+    "stream-diffusion-rs": StreamDiffusionRSDemo,
+    "nft-blockchain-interactive": NFTBlockchainInteractiveDemo,
   };
 
   return demoMap[projectId] || null;

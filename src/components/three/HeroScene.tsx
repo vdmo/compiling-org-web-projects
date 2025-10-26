@@ -334,7 +334,7 @@ export const HeroScene: React.FC = () => {
   return (
     <div className="absolute inset-0 w-full h-full pointer-events-none">
       <Canvas
-        camera={{ position: [0, 0, 10], fov: 60 }}
+        camera={{ position: [0, 3, 10], fov: 60 }}
         gl={{
           alpha: true,
           antialias: true,
@@ -342,6 +342,8 @@ export const HeroScene: React.FC = () => {
         }}
         onCreated={(state) => {
           state.gl.setClearColor("#000000", 0);
+          // Tilt camera to look down at the scene for Saturn-like view
+          state.camera.rotation.x = -0.3;
         }}
       >
         <Scene />

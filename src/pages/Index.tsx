@@ -20,7 +20,7 @@ const Index = () => {
               compiling.org
             </h1>
             <p className="text-xl md:text-2xl lg:text-3xl text-gray-300 mb-8 animate-fade-in-delay">
-              Next Generation of Tools for Visuals and Visuals for the Web
+              High-Performance Creative Tools, AI/ML, and Blockchain Infrastructure
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-delay-2">
               <a
@@ -36,6 +36,14 @@ const Index = () => {
                 className="px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg transition-all duration-300 font-semibold text-lg backdrop-blur-sm hover:scale-105"
               >
                 View on GitHub
+              </a>
+              <a
+                href="https://discord.gg/JFXGYzHZ"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg transition-all duration-300 font-semibold text-lg backdrop-blur-sm hover:scale-105"
+              >
+                Join Discord
               </a>
             </div>
           </div>
@@ -61,9 +69,8 @@ const Index = () => {
             Projects
           </h2>
           <p className="text-lg text-gray-400">
-            We are the creators, maintainers, and contributors of some of the
-            most critical infrastructure projects in the Rust/Bevy/JavaScript
-            ecosystem.
+            Building high-performance creative tools, AI/ML frameworks, and blockchain
+            solutions with Rust, Bevy, and modern web technologies.
           </p>
         </div>
 

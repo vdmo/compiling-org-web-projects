@@ -38,6 +38,14 @@ export const Navigation: React.FC = () => {
             >
               GitHub
             </a>
+            <a
+              href="https://discord.gg/JFXGYzHZ"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white transition-colors"
+            >
+              Discord
+            </a>
           </div>
         </div>
       </div>

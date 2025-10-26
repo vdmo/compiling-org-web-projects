@@ -141,6 +141,17 @@ All scenes include:
 - Responsive camera positioning
 - Smooth animations at 60fps
 
+## 🔄 Automatic Project Sync
+
+The website automatically syncs project data from GitHub repositories:
+
+- **Daily sync** at 6 AM UTC
+- Fetches README content and repository metadata
+- Creates PRs when changes are detected
+- Manual sync: `npm run sync-projects`
+
+See [SYNC_GUIDE.md](./SYNC_GUIDE.md) for detailed documentation.
+
 ## 🎨 Adding New Projects
 
 1. **Update Project Data** (`src/data/projects.ts`):
@@ -152,7 +163,7 @@ All scenes include:
   description: "Card description",
   fullDescription: "Detailed description for project page",
   href: "/projects/my-project",
-  github: "https://github.com/...",
+  github: "https://github.com/compiling-org/my-project", // Required for auto-sync
   status: "active" | "development" | "planned" | "maintained",
   tags: ["Tag1", "Tag2"],
   featured: true,

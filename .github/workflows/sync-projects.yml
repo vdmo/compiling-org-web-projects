@@ -1,0 +1,95 @@
+name: Sync Projects from GitHub
+
+on:
+  # Run on schedule (daily at 6 AM UTC)
+  schedule:
+    - cron: '0 6 * * *'
+  
+  # Allow manual trigger
+  workflow_dispatch:
+  
+  # Run when this workflow file changes
+  push:
+    paths:
+      - '.github/workflows/sync-projects.yml'
+      - 'scripts/sync-projects.js'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+      pull-requests: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: |
+          npm install @octokit/rest
+      
+      - name: Run sync script
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          node scripts/sync-projects.js
+      
+      - name: Check for changes
+        id: check_changes
+        run: |
+          if git diff --quiet .github/sync-metadata.json; then
+            echo "changes=false" >> $GITHUB_OUTPUT
+          else
+            echo "changes=true" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Create Pull Request
+        if: steps.check_changes.outputs.changes == 'true'
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'chore: sync project data from GitHub repositories'
+          title: '🔄 Sync project data from GitHub'
+          body: |
+            ## Project Data Sync
+            
+            This PR updates project metadata from GitHub repositories.
+            
+            ### Changes
+            - Updated sync metadata with latest README content
+            - Synced repository descriptions and topics
+            - Updated star counts
+            
+            ### Review
+            Please review the changes in `.github/sync-metadata.json` and manually update 
+            `src/data/projects.ts` if needed with improved descriptions from the READMEs.
+            
+            ---
+            *This PR was automatically created by the sync-projects workflow.*
+          branch: sync/project-data
+          delete-branch: true
+          labels: |
+            automated
+            sync
+            documentation
+      
+      - name: Summary
+        if: steps.check_changes.outputs.changes == 'true'
+        run: |
+          echo "✅ Changes detected and PR created" >> $GITHUB_STEP_SUMMARY
+          echo "Review the PR to update project descriptions." >> $GITHUB_STEP_SUMMARY
+      
+      - name: No Changes
+        if: steps.check_changes.outputs.changes == 'false'
+        run: |
+          echo "ℹ️ No changes detected in project data" >> $GITHUB_STEP_SUMMARY
