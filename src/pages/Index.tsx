@@ -30,7 +30,7 @@ const Index = () => {
                 Explore Projects
               </a>
               <a
-                href="https://github.com/compiling"
+                href="https://github.com/compiling-org"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg transition-all duration-300 font-semibold text-lg backdrop-blur-sm hover:scale-105"

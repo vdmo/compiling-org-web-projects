@@ -31,7 +31,7 @@ export const Navigation: React.FC = () => {
               </Link>
             )}
             <a
-              href="https://github.com/compiling"
+              href="https://github.com/compiling-org"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-white transition-colors"
