@@ -1,5 +1,5 @@
 {
-  "lastSync": "2025-10-26T09:07:34.996Z",
+  "lastSync": "2025-12-13T06:14:02.730Z",
   "projects": [
     {
       "repo": "compiling-org/nuwe-stripped",
@@ -11,7 +11,7 @@
         "rust",
         "visuals"
       ],
-      "stars": 1,
+      "stars": 3,
       "readmePreview": "A node-based audio-visual performance system built in Rust with real-time audio synthesis and GPU-accelerated visuals."
     },
     {
@@ -25,7 +25,7 @@
       "repo": "compiling-org/Geyser",
       "description": "Geyser is a high-performance Rust library designed for zero-copy GPU texture sharing across various graphics APIs, including Vulkan, Metal, and eventually WebGPU. It aims to provide a unified, safe, and efficient interface for applications and processes to seamlessly share GPU memory resources.",
       "topics": [],
-      "stars": 17,
+      "stars": 27,
       "readmePreview": "Geyser is a high-performance Rust library designed for zero-copy GPU texture sharing across various graphics APIs, including Vulkan, Metal, and eventually WebGPU. It aims to provide a unified, safe, and efficient interface for applications and processes to seamlessly share GPU memory resources."
     },
     {
@@ -38,43 +38,43 @@
         "rust",
         "visuals"
       ],
-      "stars": 1,
+      "stars": 3,
       "readmePreview": "A node-based audio-visual performance system built in Rust with real-time audio synthesis and GPU-accelerated visuals."
     },
     {
       "repo": "compiling-org/Modurust-vst-hexodsp",
-      "description": "A VST3 plugin based on HexoDSP modular synthesizer and rust framework. Advanced modular synthesis with node-based audio processing.",
+      "description": "A revolutionary Rust-based Digital Audio Workstation featuring a unique three-view paradigm that seamlessly combines traditional DAW workflows with live performance capabilities and modular synthesis.",
       "topics": [],
-      "stars": 0,
-      "readmePreview": "A VST3 plugin based on HexoDSP modular synthesizer. Advanced modular synthesis with node-based audio processing."
+      "stars": 1,
+      "readmePreview": "This README reflects the current, accurate implementation status. Many previously documented features were aspirational and are not implemented yet."
     },
     {
       "repo": "compiling-org/pd-rs-synth",
       "description": "A VST3 synthesizer plugin that integrates Pure Data patches as synthesizer modules. Based on the PlugData runtime system for embedded Pd patches in VST3 format and pd-rs",
       "topics": [],
-      "stars": 0,
+      "stars": 2,
       "readmePreview": "A VST3 synthesizer plugin that integrates Pure Data patches as synthesizer modules. Based on the PlugData runtime system for embedded Pd patches in VST3 format."
     },
     {
       "repo": "compiling-org/rust-fractal-shader-engine",
       "description": "Modular fractal shader system using Bevy and Shadplay. Advanced GPU-accelerated fractal rendering and shader development.",
       "topics": [],
-      "stars": 0,
-      "readmePreview": "A comprehensive, modular fractal shader system built with Rust and Bevy. Features advanced GPU-accelerated fractal rendering, ISF shader support, real-time audio/MIDI control, and a visual node-based composition interface."
+      "stars": 1,
+      "readmePreview": "A modular fractal generator built with Rust and Bevy. This README reflects the actual implementation status and serves as a living document that evolves with the code."
     },
     {
       "repo": "compiling-org/stream-diffusion-rs",
       "description": "High-performance multimodal AI and ML research framework in Rust - A comprehensive toolkit for diffusion models, EEG analysis, multisensorial processing, and real-time neurofeedback systems.",
       "topics": [],
       "stars": 0,
-      "readmePreview": "**High-performance multimodal AI and ML research framework in Rust** - A comprehensive toolkit for diffusion models, EEG analysis, multisensorial processing, and real-time neurofeedback systems."
+      "readmePreview": "**A comprehensive toolkit for diffusion models, EEG analysis, multisensorial processing, and real-time neurofeedback systems.**"
     },
     {
       "repo": "compiling-org/nft-blockchain-interactive",
       "description": "Interactive NFT system with Filecoin and NEAR blockchain integration. Smart contracts for connecting Nuwe system to Filecoin and NEAR blockchains.",
       "topics": [],
       "stars": 0,
-      "readmePreview": "Interactive NFT system with Filecoin and NEAR blockchain integration. Smart contracts for connecting Nuwe system to Filecoin and NEAR blockchains."
+      "readmePreview": "> **Emotional AI meets Blockchain Technology** - A revolutionary platform for emotionally-aware NFTs that evolve, interact, and express complex emotional states across multiple blockchain ecosystems."
     }
   ]
 }
